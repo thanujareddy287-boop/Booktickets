@@ -1,0 +1,8 @@
+
+/* Extra responsive helpers */
+@media (min-width:1200px){
+  .hero{padding-top:95px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}

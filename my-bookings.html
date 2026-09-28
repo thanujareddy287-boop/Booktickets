@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>My Bookings</title><link rel="stylesheet" href="css/style.css"></head>
+<body><header class="header"><div class="logo">Journey<span>Go</span></div><nav><a href="index.html">Home</a></nav></header><main class="container"><div class="page-head"><h1>My Bookings</h1><a class="primary" href="index.html">Book Again</a></div><div id="bookings"></div></main><script src="js/storage.js"></script><script>
+const box=document.getElementById('bookings'), data=JSON.parse(localStorage.getItem('journeyBookings')||'[]');
+if(!data.length){box.innerHTML='<div class="empty panel">No bookings yet.</div>'}
+else data.reverse().forEach(b=>{const d=document.createElement('div');d.className='booking-card panel';d.innerHTML='<div><span class="badge">'+b.type+'</span><h2>'+b.from+' → '+b.to+'</h2><p>'+b.date+' • '+b.serviceName+'</p><p>Seats: '+b.seats.join(', ')+'</p><b>PNR: '+b.pnr+'</b></div><strong>₹'+b.total+'</strong>';box.appendChild(d)})</script></body></html>
